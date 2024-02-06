@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter_demo/base/basePage.dart';
+import 'package:flutter/material.dart';
+import 'package:test_flutter_demo/base/basePage.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-class Page11 extends StatefulWidget {
+class Page11 extends StatefulWidget with BasePage {
+  static String routePath = 'page11';
   const Page11({super.key});
 
   @override

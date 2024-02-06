@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter_demo/base/basePage.dart';
 
-class Page8 extends StatefulWidget {
+class Page8 extends StatefulWidget with BasePage {
+  static String routePath = 'page8';
   const Page8({super.key});
 
   @override
   State<Page8> createState() => _Page8State();
-  
-  
 }
 
-
-class  _Page8State extends State<Page8>{
-
-@override
+class _Page8State extends State<Page8> {
+  @override
   Widget build(BuildContext context) {
-
     const redBox = DecoratedBox(
       decoration: BoxDecoration(color: Colors.red),
     );
@@ -36,31 +33,30 @@ class  _Page8State extends State<Page8>{
 
     List<Widget> list = [
       ConstrainedBox(
-          constraints: const BoxConstraints(minHeight: 20,minWidth: 20),
-          child: redBox,
-        ),
-        ConstrainedBox(
-          constraints:const BoxConstraints(minHeight: 25,minWidth: 25),
-          child: greenBox,
-        ),
-        ConstrainedBox(
-          constraints:const BoxConstraints(minHeight: 30,minWidth: 30),
-          child: blackBox,
-        ),
-        ConstrainedBox(
-          constraints:const BoxConstraints(minHeight: 35,minWidth: 35),
-          child: yellowBox,
-        ),
-        ConstrainedBox(
-          constraints:const BoxConstraints(minHeight: 40,minWidth: 40),
-          child: blueBox,
-        ),
-        ConstrainedBox(
-          constraints:const BoxConstraints(minHeight: 45,minWidth: 45),
-          child: orangeBox,
-        ),
+        constraints: const BoxConstraints(minHeight: 20, minWidth: 20),
+        child: redBox,
+      ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 25, minWidth: 25),
+        child: greenBox,
+      ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 30, minWidth: 30),
+        child: blackBox,
+      ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 35, minWidth: 35),
+        child: yellowBox,
+      ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 40, minWidth: 40),
+        child: blueBox,
+      ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 45, minWidth: 45),
+        child: orangeBox,
+      ),
     ];
-
 
     return Scaffold(
       appBar: AppBar(
@@ -69,29 +65,24 @@ class  _Page8State extends State<Page8>{
       body: Center(
         child: Column(
           children: [
+            Row(textDirection: TextDirection.ltr, children: list),
+            Row(textDirection: TextDirection.rtl, children: list),
             Row(
-              textDirection:TextDirection.ltr,
-              children: list),
+                mainAxisSize: MainAxisSize.max,
+                textDirection: TextDirection.ltr,
+                children: list),
             Row(
-              textDirection:TextDirection.rtl,
-              children: list),
+                mainAxisAlignment: MainAxisAlignment.center,
+                textDirection: TextDirection.rtl,
+                children: list),
             Row(
-              mainAxisSize: MainAxisSize.max,
-              textDirection:TextDirection.ltr,
-              children: list),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              textDirection:TextDirection.rtl,
-              children: list),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              textDirection:TextDirection.rtl,
-              children: list),
-
+                crossAxisAlignment: CrossAxisAlignment.center,
+                textDirection: TextDirection.rtl,
+                children: list),
             Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              textDirection:TextDirection.rtl,
-              children: list),
+                crossAxisAlignment: CrossAxisAlignment.center,
+                textDirection: TextDirection.rtl,
+                children: list),
           ],
         ),
       ),

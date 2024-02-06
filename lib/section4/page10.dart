@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter_demo/base/basePage.dart';
 
-class Page10 extends StatefulWidget {
+class Page10 extends StatefulWidget with BasePage {
+  static String routePath = 'page10';
   const Page10({super.key});
 
   @override
   State<Page10> createState() => _Page10State();
 }
 
-
-class  _Page10State extends State<Page10>{
-
-@override
+class _Page10State extends State<Page10> {
+  @override
   Widget build(BuildContext context) {
-
     const redBox = DecoratedBox(
       decoration: BoxDecoration(color: Colors.red),
     );
@@ -43,64 +42,63 @@ class  _Page10State extends State<Page10>{
     );
 
     List<Widget> list = [
-        ConstrainedBox(
-          constraints: const BoxConstraints(minHeight: 30,minWidth: 30),
-          child: redBox,
-        ),
-        ConstrainedBox(
-          constraints:const BoxConstraints(minHeight: 30,minWidth: 30),
-          child: greenBox,
-        ),
-        ConstrainedBox(
-          constraints:const BoxConstraints(minHeight: 30,minWidth: 30),
-          child: blackBox,
-        ),
-        ConstrainedBox(
-          constraints:const BoxConstraints(minHeight: 30,minWidth: 30),
-          child: yellowBox,
-        ),
-        ConstrainedBox(
-          constraints:const BoxConstraints(minHeight: 30,minWidth: 30),
-          child: blueBox,
-        ),
-        ConstrainedBox(
-          constraints:const BoxConstraints(minHeight: 30,minWidth: 30),
-          child: orangeBox,
-        ),
-        ConstrainedBox(
-          constraints: const BoxConstraints(minHeight: 30,minWidth: 30),
-          child: deepOrangeBox,
-        ),
-        ConstrainedBox(
-          constraints:const BoxConstraints(minHeight: 30,minWidth: 30),
-          child: deepOrangeBox1,
-        ),
-        ConstrainedBox(
-          constraints:const BoxConstraints(minHeight: 30,minWidth: 30),
-          child: deepOrangeBox2,
-        ),
-        ConstrainedBox(
-          constraints:const BoxConstraints(minHeight: 30,minWidth: 30),
-          child: yellowBox,
-        ),
-        ConstrainedBox(
-          constraints:const BoxConstraints(minHeight: 30,minWidth: 30),
-          child: blueBox,
-        ),
-        ConstrainedBox(
-          constraints:const BoxConstraints(minHeight: 30,minWidth: 30),
-          child: orangeBox,
-        ),
-        ConstrainedBox(
-          constraints:const BoxConstraints(minHeight: 30,minWidth: 30),
-          child: redBox,
-        ),
-        ConstrainedBox(
-          constraints:const BoxConstraints(minHeight: 30,minWidth: 30),
-          child: greenBox,
-        ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 30, minWidth: 30),
+        child: redBox,
+      ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 30, minWidth: 30),
+        child: greenBox,
+      ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 30, minWidth: 30),
+        child: blackBox,
+      ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 30, minWidth: 30),
+        child: yellowBox,
+      ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 30, minWidth: 30),
+        child: blueBox,
+      ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 30, minWidth: 30),
+        child: orangeBox,
+      ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 30, minWidth: 30),
+        child: deepOrangeBox,
+      ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 30, minWidth: 30),
+        child: deepOrangeBox1,
+      ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 30, minWidth: 30),
+        child: deepOrangeBox2,
+      ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 30, minWidth: 30),
+        child: yellowBox,
+      ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 30, minWidth: 30),
+        child: blueBox,
+      ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 30, minWidth: 30),
+        child: orangeBox,
+      ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 30, minWidth: 30),
+        child: redBox,
+      ),
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 30, minWidth: 30),
+        child: greenBox,
+      ),
     ];
-
 
     return Scaffold(
       appBar: AppBar(
@@ -109,34 +107,29 @@ class  _Page10State extends State<Page10>{
       body: Center(
         child: Column(
           children: [
-            Wrap(
-              spacing: 10,
-              textDirection:TextDirection.ltr,
-              children: list),
+            Wrap(spacing: 10, textDirection: TextDirection.ltr, children: list),
+            const Padding(padding: EdgeInsets.only(top: 10)),
+            Wrap(alignment: WrapAlignment.start, children: list),
             const Padding(padding: EdgeInsets.only(top: 10)),
             Wrap(
-              alignment:WrapAlignment.start,
-              children: list),
+                alignment: WrapAlignment.end,
+                textDirection: TextDirection.ltr,
+                children: list),
             const Padding(padding: EdgeInsets.only(top: 10)),
             Wrap(
-              alignment: WrapAlignment.end,
-              textDirection:TextDirection.ltr,
-              children: list),
+                alignment: WrapAlignment.center,
+                textDirection: TextDirection.rtl,
+                children: list),
             const Padding(padding: EdgeInsets.only(top: 10)),
             Wrap(
-              alignment: WrapAlignment.center,
-              textDirection:TextDirection.rtl,
-              children: list),
+                alignment: WrapAlignment.center,
+                textDirection: TextDirection.rtl,
+                children: list),
             const Padding(padding: EdgeInsets.only(top: 10)),
             Wrap(
-              alignment: WrapAlignment.center,
-              textDirection:TextDirection.rtl,
-              children: list),
-            const Padding(padding: EdgeInsets.only(top: 10)),
-            Wrap(
-              alignment: WrapAlignment.center,
-              textDirection:TextDirection.rtl,
-              children: list),
+                alignment: WrapAlignment.center,
+                textDirection: TextDirection.rtl,
+                children: list),
           ],
         ),
       ),

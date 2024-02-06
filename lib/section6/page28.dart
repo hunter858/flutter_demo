@@ -1,26 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter_demo/base/basePage.dart';
 
-class Page28 extends StatefulWidget {
+class Page28 extends StatefulWidget with BasePage {
+  static String routePath = 'page28';
   const Page28({super.key});
 
   @override
   State<Page28> createState() => _Page28State();
 }
 
-
-class  _Page28State extends State<Page28>{
- 
+class _Page28State extends State<Page28> {
   @override
   Widget build(BuildContext context) {
-
     var children = <Widget>[];
-    for (int i = 0 ;i <6 ;i++){
-      children.add(
-        KeepAliveWrapper(
-          keepAlive: true,
-          child: CustomPage(text:"${i}"),
-        )
-      );
+    for (int i = 0; i < 6; i++) {
+      children.add(KeepAliveWrapper(
+        keepAlive: true,
+        child: CustomPage2(text: "${i}"),
+      ));
     }
 
     return Scaffold(
@@ -36,20 +33,17 @@ class  _Page28State extends State<Page28>{
   }
 }
 
-// Tab 页面 
-class CustomPage extends StatefulWidget {
-  const CustomPage({
-    Key? key,
-    required this.text
-  }) : super(key: key);
+// Tab 页面
+class CustomPage2 extends StatefulWidget {
+  const CustomPage2({Key? key, required this.text}) : super(key: key);
 
   final String text;
 
   @override
-  _CustomPageState createState() => _CustomPageState();
+  _CustomPage2State createState() => _CustomPage2State();
 }
 
-class _CustomPageState extends State<CustomPage> {
+class _CustomPage2State extends State<CustomPage2> {
   @override
   Widget build(BuildContext context) {
     print("build ${widget.text}");
@@ -57,8 +51,7 @@ class _CustomPageState extends State<CustomPage> {
   }
 }
 
-
-class KeepAliveWrapper extends StatefulWidget {
+class KeepAliveWrapper extends StatefulWidget with BasePage {
   const KeepAliveWrapper({
     Key? key,
     this.keepAlive = true,
@@ -81,7 +74,7 @@ class _KeepAliveWrapperState extends State<KeepAliveWrapper>
 
   @override
   void didUpdateWidget(covariant KeepAliveWrapper oldWidget) {
-    if(oldWidget.keepAlive != widget.keepAlive) {
+    if (oldWidget.keepAlive != widget.keepAlive) {
       // keepAlive 状态需要更新，实现在 AutomaticKeepAliveClientMixin 中
       updateKeepAlive();
     }

@@ -1,82 +1,82 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter_demo/base/basePage.dart';
 import 'package:english_words/english_words.dart';
 
-class Page23 extends StatefulWidget {
+class Page23 extends StatefulWidget with BasePage {
+  static String routePath = 'page23';
   const Page23({super.key});
 
   @override
   State<Page23> createState() => _Page23State();
 }
 
-
-
-
-
-class  _Page23State extends State<Page23>{
- 
+class _Page23State extends State<Page23> {
   int currentSelectIndex = 1;
 
-  Widget _listDemo1(){
+  Widget _listDemo1() {
     return ListView.builder(
-            itemCount: 100,
-            itemExtent: 50.0, //强制高度为50.0
-            itemBuilder: (BuildContext context, int index) {
-              return ListTile(title: Text("$index"));
-            }
-          );
-  } 
+        itemCount: 100,
+        itemExtent: 50.0, //强制高度为50.0
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(title: Text("$index"));
+        });
+  }
 
-  Widget _listDemo2(){
-    Widget divider1 = Divider(color: Colors.blue,);
+  Widget _listDemo2() {
+    Widget divider1 = Divider(
+      color: Colors.blue,
+    );
     Widget divider2 = Divider(color: Colors.green);
     return ListView.separated(
-            itemCount: 100,
-            separatorBuilder: (BuildContext context, int index) {
-                return index%2==0?divider1:divider2;
-              }, //强制高度为50.0
-            itemBuilder: (BuildContext context, int index) {
-              return ListTile(title: Text("$index"));
-            }
-          );
+        itemCount: 100,
+        separatorBuilder: (BuildContext context, int index) {
+          return index % 2 == 0 ? divider1 : divider2;
+        }, //强制高度为50.0
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(title: Text("$index"));
+        });
   }
 
-  Widget _listDemo3(){
+  Widget _listDemo3() {
     return InfiniteListView();
   }
-  
-  Widget _listDemo4(){
-    return ListView.builder(
-            itemCount: 100,
-            itemExtent: 50.0, //强制高度为50.0
-            itemBuilder: (BuildContext context, int index) {
-              return ListTile(title: Text("$index"));
-            }
-          );
-  } 
-  
-  Widget _listDemo5(){
-    return ListView.builder(
-            itemCount: 100,
-            itemExtent: 50.0, //强制高度为50.0
-            itemBuilder: (BuildContext context, int index) {
-              return ListTile(title: Text("$index"));
-            }
-          );
-  } 
 
-  Widget currentList(int type){
+  Widget _listDemo4() {
+    return ListView.builder(
+        itemCount: 100,
+        itemExtent: 50.0, //强制高度为50.0
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(title: Text("$index"));
+        });
+  }
+
+  Widget _listDemo5() {
+    return ListView.builder(
+        itemCount: 100,
+        itemExtent: 50.0, //强制高度为50.0
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(title: Text("$index"));
+        });
+  }
+
+  Widget currentList(int type) {
     Widget list = _listDemo1();
-    switch(type){
-      case 1: list = _listDemo1();
-      case 2: list = _listDemo2();
-      case 3: list = _listDemo3();
-      case 4: list = _listDemo4();
-      case 5: list = _listDemo5();
+    switch (type) {
+      case 1:
+        list = _listDemo1();
+      case 2:
+        list = _listDemo2();
+      case 3:
+        list = _listDemo3();
+      case 4:
+        list = _listDemo4();
+      case 5:
+        list = _listDemo5();
     }
     return list;
   }
 
-  void _onPress(BuildContext context,int type){
+  void _onPress(BuildContext context, int type) {
     setState(() {
       currentSelectIndex = type;
     });
@@ -84,41 +84,45 @@ class  _Page23State extends State<Page23>{
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
         title: const Text('Page23 Route'),
       ),
       body: Container(
-        child:Column(
+        child: Column(
           children: [
-            SizedBox(width: double.infinity,height: 50,
+            SizedBox(
+              width: double.infinity,
+              height: 50,
               child: Row(
                 children: [
                   OutlinedButton(
-                    onPressed: ()=>_onPress(context,1),
+                    onPressed: () => _onPress(context, 1),
                     child: const Text('list1'),
                   ),
                   OutlinedButton(
-                    onPressed: ()=>_onPress(context,2),
+                    onPressed: () => _onPress(context, 2),
                     child: const Text('list2'),
                   ),
                   OutlinedButton(
-                    onPressed: ()=>_onPress(context,3),
+                    onPressed: () => _onPress(context, 3),
                     child: const Text('list3'),
                   ),
                   OutlinedButton(
-                    onPressed: ()=>_onPress(context,4),
+                    onPressed: () => _onPress(context, 4),
                     child: const Text('list4'),
                   ),
                   OutlinedButton(
-                    onPressed: ()=>_onPress(context,5),
+                    onPressed: () => _onPress(context, 5),
                     child: const Text('list5'),
                   ),
                 ],
               ),
             ),
-            Expanded(flex:1, child: currentList(currentSelectIndex),)
+            Expanded(
+              flex: 1,
+              child: currentList(currentSelectIndex),
+            )
             // Expanded(flex:1, child: _listDemo1(),)
           ],
         ),
@@ -126,9 +130,6 @@ class  _Page23State extends State<Page23>{
     );
   }
 }
-
-
-
 
 //---------------
 

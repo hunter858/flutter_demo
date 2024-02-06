@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter_demo/base/basePage.dart';
 
-class Page54 extends StatefulWidget {
+class Page54 extends StatefulWidget with BasePage {
+  static String routePath = 'page54';
   const Page54({super.key});
 
   @override
   State<Page54> createState() => _Page54State();
 }
 
-
-class  _Page54State extends State<Page54>{
- 
+class _Page54State extends State<Page54> {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Page54 Route'),

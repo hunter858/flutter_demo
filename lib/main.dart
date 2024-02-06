@@ -1,95 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:test_flutter_demo/page/tempPage.dart';
-import 'package:test_flutter_demo/section3/page1.dart';
-import 'package:test_flutter_demo/section3/page2.dart';
-import 'package:test_flutter_demo/section3/page3.dart';
-import 'package:test_flutter_demo/section3/page4.dart';
-import 'package:test_flutter_demo/section3/page5.dart';
-import 'package:test_flutter_demo/section3/page6.dart';
-import 'package:test_flutter_demo/section4/page7.dart';
-import 'package:test_flutter_demo/section4/page8.dart';
-import 'package:test_flutter_demo/section4/page9.dart';
-import 'package:test_flutter_demo/section4/page10.dart';
-import 'package:test_flutter_demo/section4/page11.dart';
-import 'package:test_flutter_demo/section4/page12.dart';
-import 'package:test_flutter_demo/section4/page13.dart';
-import 'package:test_flutter_demo/section5/page14.dart';
-import 'package:test_flutter_demo/section5/page15.dart';
-import 'package:test_flutter_demo/section5/page16.dart';
-import 'package:test_flutter_demo/section5/page17.dart';
-import 'package:test_flutter_demo/section5/page18.dart';
-import 'package:test_flutter_demo/section5/page19.dart';
-import 'package:test_flutter_demo/section5/page20.dart';
-import 'package:test_flutter_demo/section6/page21.dart';
-import 'package:test_flutter_demo/section6/page22.dart';
-import 'package:test_flutter_demo/section6/page23.dart';
-import 'package:test_flutter_demo/section6/page24.dart';
-import 'package:test_flutter_demo/section6/page25.dart';
-import 'package:test_flutter_demo/section6/page26.dart';
-import 'package:test_flutter_demo/section6/page27.dart';
-import 'package:test_flutter_demo/section6/page28.dart';
-import 'package:test_flutter_demo/section6/page29.dart';
-import 'package:test_flutter_demo/section6/page30.dart';
-import 'package:test_flutter_demo/section6/page31.dart';
-import 'package:test_flutter_demo/section6/page32.dart';
-import 'package:test_flutter_demo/section7/page33.dart';
-import 'package:test_flutter_demo/section7/page34.dart';
-
-import 'package:test_flutter_demo/section7/page35.dart';
-import 'package:test_flutter_demo/section7/page36.dart';
-import 'package:test_flutter_demo/section7/page37.dart';
-import 'package:test_flutter_demo/section7/page38.dart';
-import 'package:test_flutter_demo/section8/page39.dart';
-import 'package:test_flutter_demo/section8/page40.dart';
-import 'package:test_flutter_demo/section8/page41.dart';
-import 'package:test_flutter_demo/section8/page42.dart';
-import 'package:test_flutter_demo/section8/page43.dart';
-import 'package:test_flutter_demo/section8/page44.dart';
-import 'package:test_flutter_demo/section9/page45.dart';
-import 'package:test_flutter_demo/section9/page46.dart';
-import 'package:test_flutter_demo/section9/page47.dart';
-import 'package:test_flutter_demo/section9/page48.dart';
-import 'package:test_flutter_demo/section9/page49.dart';
-import 'package:test_flutter_demo/section9/page50.dart';
-import 'package:test_flutter_demo/section9/page51.dart';
-
-import 'package:test_flutter_demo/section10/page52.dart';
-import 'package:test_flutter_demo/section10/page53.dart';
-import 'package:test_flutter_demo/section10/page54.dart';
-import 'package:test_flutter_demo/section10/page55.dart';
-import 'package:test_flutter_demo/section10/page56.dart';
-import 'package:test_flutter_demo/section10/page57.dart';
-import 'package:test_flutter_demo/section10/page58.dart';
-import 'package:test_flutter_demo/section10/page59.dart';
-
-import 'package:test_flutter_demo/section11/page60.dart';
-import 'package:test_flutter_demo/section11/page61.dart';
-import 'package:test_flutter_demo/section11/page62.dart';
-import 'package:test_flutter_demo/section11/page63.dart';
-import 'package:test_flutter_demo/section11/page64.dart';
-import 'package:test_flutter_demo/section11/page65.dart';
-import 'package:test_flutter_demo/section11/page66.dart';
-
-import 'package:test_flutter_demo/section12/page67.dart';
-import 'package:test_flutter_demo/section12/page68.dart';
-
-import 'package:test_flutter_demo/section13/page69.dart';
-import 'package:test_flutter_demo/section13/page70.dart';
-import 'package:test_flutter_demo/section13/page71.dart';
-import 'package:test_flutter_demo/section13/page72.dart';
-
-import 'package:test_flutter_demo/section14/page73.dart';
-import 'package:test_flutter_demo/section14/page74.dart';
-import 'package:test_flutter_demo/section14/page75.dart';
-import 'package:test_flutter_demo/section14/page76.dart';
-import 'package:test_flutter_demo/section14/page77.dart';
-import 'package:test_flutter_demo/section14/page78.dart';
-import 'package:test_flutter_demo/section14/page79.dart';
-import 'package:test_flutter_demo/section14/page80.dart';
+import 'package:go_router/go_router.dart';
+import 'package:test_flutter_demo/modules_define.dart';
+import 'package:test_flutter_demo/modules_register.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
+final GoRouter _router = GoRouter(
+  routes: <RouteBase>[
+    GoRoute(
+      path: '/',
+      builder: (BuildContext context, GoRouterState state) {
+        return const MyHomePage(
+          title: 'demoApp',
+        );
+      },
+      routes: RegisterRoutes.initRouters(),
+    ),
+  ],
+);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -97,28 +27,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page3'),
+    return MaterialApp.router(
+      routerConfig: _router,
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -212,20 +128,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
       body: Center(

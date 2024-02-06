@@ -1,25 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter_demo/base/basePage.dart';
+import 'package:flutter/material.dart';
+import 'package:test_flutter_demo/base/basePage.dart';
 
-
-
-
-
-class Page13 extends StatefulWidget {
+class Page13 extends StatefulWidget with BasePage {
+  static String routePath = 'page13';
   const Page13({super.key});
 
   @override
   State<Page13> createState() => _Page13State();
 }
 
-
-class  _Page13State extends State<Page13>{
-
-  
- 
+class _Page13State extends State<Page13> {
   @override
   Widget build(BuildContext context) {
-
-   
     final _childrenA = List.filled(6, Text("A"));
     final _childrenB = List.filled(6, Text("B"));
     return Scaffold(
@@ -31,13 +25,12 @@ class  _Page13State extends State<Page13>{
           SizedBox(width: 190, child: ResponsiveColumn(children: _childrenA)),
           SizedBox(width: 210, child: ResponsiveColumn(children: _childrenB)),
           ResponsiveColumn(children: _childrenA),
-          LayoutLogPrint(child:Text("xx")) // 下面介绍
+          LayoutLogPrint(child: Text("xx")) // 下面介绍
         ],
       ),
     );
   }
 }
-
 
 class ResponsiveColumn extends StatelessWidget {
   const ResponsiveColumn({Key? key, required this.children}) : super(key: key);
@@ -71,7 +64,6 @@ class ResponsiveColumn extends StatelessWidget {
     );
   }
 }
-
 
 class LayoutLogPrint<T> extends StatelessWidget {
   const LayoutLogPrint({

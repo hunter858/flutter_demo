@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter_demo/base/basePage.dart';
 
-class Page44 extends StatefulWidget {
+class Page44 extends StatefulWidget with BasePage {
+  static String routePath = 'page44';
   const Page44({super.key});
 
   @override
   State<Page44> createState() => _Page44State();
 }
 
-
-class  _Page44State extends State<Page44>{
- 
+class _Page44State extends State<Page44> {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Page44 Route'),
       ),
-      body:const Center(
-        child: Center(
-          child: Text('未实现该demo'),
-        )
-      ),
+      body: const Center(
+          child: Center(
+        child: Text('未实现该demo'),
+      )),
     );
   }
 }
@@ -51,4 +49,3 @@ class CartModel extends ChangeNotifier {
     notifyListeners();
   }
 }
-

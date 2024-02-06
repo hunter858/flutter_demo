@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter_demo/base/basePage.dart';
 
-class Page6 extends StatelessWidget {
+class Page6 extends StatelessWidget with BasePage {
+  static String routePath = 'page6';
   const Page6({super.key});
 
   @override
@@ -10,37 +12,37 @@ class Page6 extends StatelessWidget {
         title: const Text('Page6 Route'),
       ),
       body: const Center(
-        child:  Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(padding:EdgeInsets.all(10) ),
+            Padding(padding: EdgeInsets.all(10)),
             LinearProgressIndicator(
               color: Colors.green,
               valueColor: AlwaysStoppedAnimation(Colors.blue),
             ),
-            Padding(padding:EdgeInsets.all(10) ),
+            Padding(padding: EdgeInsets.all(10)),
             LinearProgressIndicator(
-              value:0.5,
+              value: 0.5,
               color: Colors.green,
               valueColor: AlwaysStoppedAnimation(Colors.blue),
             ),
-            Padding(padding:EdgeInsets.all(10) ),
+            Padding(padding: EdgeInsets.all(10)),
             SizedBox(
               width: 300,
               height: 20,
               child: LinearProgressIndicator(
-                value:0.5,
+                value: 0.5,
                 color: Colors.green,
                 valueColor: AlwaysStoppedAnimation(Colors.blue),
               ),
             ),
-            Padding(padding:EdgeInsets.all(10) ),
+            Padding(padding: EdgeInsets.all(10)),
             CircularProgressIndicator(
               backgroundColor: Colors.greenAccent,
               valueColor: AlwaysStoppedAnimation(Colors.blue),
             ),
-            Padding(padding:EdgeInsets.all(10) ),
+            Padding(padding: EdgeInsets.all(10)),
             //进度条显示50%，会显示一个半圆
             CircularProgressIndicator(
               backgroundColor: Colors.lightGreenAccent,
