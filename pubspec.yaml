@@ -19,7 +19,8 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>= 3.0.0'
+  #此插件最低支持3.0.0版本
+  sdk: '>= 3.0.0' 
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -31,6 +32,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  #实例1 environment: ^1.4.0 在该项目中，此插件指定版本为1.4.0 
+  #实例2 environment: ">=1.2.3" 此插件最低版本为1.2.3
+  #实例4 environment: "<1.2.3" 此插件最高支持到1.2.3以下版本
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -39,6 +43,8 @@ dependencies:
   freezed: ^2.3.2
   json_serializable: ^6.6.1
   build_runner: ^2.1.8
+  #图片缓存工具
+  cached_network_image: ^3.2.3
 
 dev_dependencies:
   flutter_test:
